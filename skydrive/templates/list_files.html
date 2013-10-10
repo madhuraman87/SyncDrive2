@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+  <p>Welcome {{user}}</p>
+  <p>Skydrive Avaliable space :: {{quota}} </p>
+{% for entry in listFiles %}
+	{% if entry.id.split('.')[0] != "folder" %}
+	<p><b> <a download="{{entry.name}}" href="{{entry.raw_link}}">{{entry.name}}</a> :: {{entry.size}}</b></p>
+	{% else %}
+	<p><b> <a href="list_files?folder={{entry.id}}">{{entry.name}}</a> :: {{entry.size}}</b></p>
+	{% endif %}
+{% endfor %}
+
+</div>
+</body>
+</html>
+
+
