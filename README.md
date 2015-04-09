@@ -1,3 +1,3 @@
 CMPE273
 =====
-Skydrive part fr SyncDrive
+Skydrive part f0r SyncDrive
